@@ -15,7 +15,7 @@ I use this portfolio to showcase projects that demonstrate technical skills, pro
 - Reduced manual processing time by ~60%.  
 - Improved accuracy in finance approvals and reporting.
 
-### 2. Shipping Margin Dashboard (Power BI + SQL)
+### 2. Analytics Dashboard (Finance + Operations) (Power BI + SQL)
 - Built Power BI dashboards (10M+ rows processed) for Finance & Operations leadership.  
 - Delivered monthly management pack visuals used in supplier negotiations and board reporting.  
 
