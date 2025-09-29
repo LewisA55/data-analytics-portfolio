@@ -16,7 +16,13 @@ supporting supplier negotiations and identifying loss-making jobs.
 - Power BI (DAX measures, 12-page interactive report).  
 - SQL (fact tables for shipments and charges).  
 - Python (CSV → Parquet → DuckDB pipeline).  
-- dbt (enrichment and fiscal calendar modelling).  
+- dbt (enrichment and fiscal calendar modelling).
+  
+## 📂 Files
+- [DAX Measures](Dax-Measures.md)  
+- [Pipeline Overview](Pipeline_Overview.md)  
+- [SQL Models](SQL-Models.sql)  
+- [Report Screenshots](Report-Screenshots)  
 
 ## Sample Visuals
 ![Executive Dashboard]
