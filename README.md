@@ -18,7 +18,7 @@ This portfolio is designed to highlight **technical capability, analytical think
 | **SQL / DuckDB** | • Data enrichment pipelines <br> • Joining fact tables & charge structures <br> • Handling large datasets (**10M–30M rows**) |
 | **dbt** | • Modular modelling (Staging → Intermediate → Mart layers) <br> • Shipping & margin enrichment <br> • Country mapping, Fact/Dim schema design |
 | **Power BI** | • DAX modelling <br> • Executive dashboards & reporting <br> • Loss-making diagnostics, carrier performance analytics |
-| **Excel** | • VBA automation <br> • Python-in-Excel experiments <br> • Invoice reconciliation tooling |
+| **Excel** | • VBA automation <br> • Python-in-Excel experiments <br> • Automated reconciliation tooling |
 
 ---
 
@@ -28,9 +28,8 @@ This portfolio demonstrates:
 
 - **Advanced analytics** applied to real operational data  
 - Translating code into **actionable business insights**  
-- Working with **large datasets (10M–30M rows)**  
+- Working with **large datasets**  
 - Understanding of **shipping, margin, and costing data**  
-- Strong foundations for **audit, risk, and finance apprenticeships**
 
 ---
 
