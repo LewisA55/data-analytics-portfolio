@@ -15,7 +15,7 @@ This portfolio is designed to highlight **technical capability, analytical think
 | Technology | Key Skills & Applications |
 | :--- | :--- |
 | **Python** | • **Libraries:** `pandas`, `numpy`, `scikit-learn`, `seaborn`, `matplotlib`  <br> • **Tools:** Jupyter / VS Code notebooks, `duckdb` (local OLAP engine) <br> • **Applications:** Anomaly detection, forecasting, clustering, data diagnostics |
-| **SQL / DuckDB** | • Data enrichment pipelines <br> • Joining fact tables & charge structures <br> • Handling large datasets (**10M–30M rows**) |
+| **SQL / DuckDB** | • Data enrichment pipelines <br> • Joining fact tables & charge structures <br> • Handling large datasets |
 | **dbt** | • Modular modelling (Staging → Intermediate → Mart layers) <br> • Shipping & margin enrichment <br> • Country mapping, Fact/Dim schema design |
 | **Power BI** | • DAX modelling <br> • Executive dashboards & reporting <br> • Loss-making diagnostics, carrier performance analytics |
 | **Excel** | • VBA automation <br> • Python-in-Excel experiments <br> • Automated reconciliation tooling |
