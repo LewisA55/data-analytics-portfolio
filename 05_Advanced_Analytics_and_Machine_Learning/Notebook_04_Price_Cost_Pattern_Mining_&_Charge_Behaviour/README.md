@@ -1,126 +1,154 @@
-📘 Notebook 04 — Price/Cost Pattern Mining & Charge Behaviour Analysis
+# 📦 Price/Cost Pattern Mining & Charge Behaviour  
+### Advanced Analytics for 3PL Margin Performance
 
-A portfolio case study analysing pricing patterns, charge behaviour, and cost irregularities across shipments.
+This notebook is part of a wider analytics portfolio built to demonstrate how data engineering, statistical modelling, and commercial analysis can be combined to understand and improve shipping margin performance in a 3PL environment.
 
-Objective
+It focuses on **charge-level behaviour**, analysing how fuel, remote area fees, express surcharges, and other cost drivers influence margin, loss rate, and supplier performance.
 
-This notebook explores how price, cost, margin, and charge-level patterns behave across shipments, using advanced analytical techniques to:
+---
 
-Detect pricing inconsistencies
+## 🚀 Project Overview
 
-Understand how different charge types contribute to loss-making shipments
+Shipping cost behaviour is influenced heavily by the presence, frequency, and pricing of additional charges.  
+This notebook explores how those charges impact profitability and operational patterns through:
 
-Surface structural patterns in cost allocation
+### 🔹 Price/Cost pattern mining  
+Identifies which charges drive:
 
-Identify operational inefficiencies and revenue leakage
+- Highest cost  
+- Greatest revenue uplift  
+- Highest/lowest margin  
+- Largest contribution to loss-making shipments  
 
-Reveal charge combinations strongly associated with profit or loss
+### 🔹 Loss uplift analysis  
+For each charge type:
 
-It forms part of a broader analysis suite covering anomaly detection, forecasting, segmentation, and executive insights.
+- Compute loss rate for shipments with the charge  
+- Compare against the **baseline loss rate**  
+- Quantify uplift (percentage-point impact)  
+- Plot frequency vs uplift (log scale)
 
-Key Components
-1. Shipment-Level Price & Cost Behaviour
+This reveals which charges are **high-risk**, **low-risk**, or **neutral**.
 
-Aggregated summaries of sales, cost, and margin patterns
+### 🔹 Supplier × charge matrix  
+Creates a **Supplier × Charge heatmap**, highlighting:
 
-Identification of distribution shapes (skewness, tails, variance)
+- Which suppliers apply certain surcharges more frequently  
+- Which combinations systematically erode margin  
+- Supplier behaviours worth challenging or renegotiating
 
-Industry-relevant KPIs such as:
+### 🔹 Logistic regression modelling  
+A predictive model is trained to estimate whether a shipment becomes loss-making based on charge presence.  
+This includes:
 
-Margin%
+- One-hot encoding of charges  
+- Logistic regression fit  
+- Odds ratios for interpretability  
+- Identification of:
+  - **Risk-increasing charges**  
+  - **Protective charges**  
+  - **Unexpected interactions**  
 
-Cost per package
+### 🔹 Business interpretation  
+Provides narrative insights into:
 
-Sales-to-cost ratio
+- Where margin leakage occurs  
+- Which charges require review  
+- Which clients/suppliers over-index on risky fees  
+- Operational and commercial opportunities
 
-2. Charge Type Exploration
+---
 
-Frequency analysis of all charge types
+## 🧰 Technologies Used
 
-Shipment-level charge presence analysis
+| Layer | Tools |
+|------|-------|
+| Data Processing | Python, Pandas, NumPy |
+| Visualisation | Seaborn, Matplotlib |
+| Modelling | scikit-learn (LogisticRegression) |
+| Business Analytics | Uplift analysis, risk scoring, marginal impact analysis |
+| Environment | Conda, Jupyter Notebooks |
 
-Heatmaps showing charge co-occurrence
+---
 
-Detection of charge patterns strongly linked to:
+## 📄 Notebook Structure
 
-Loss-making shipments
+### **1. Load & Join Shipment + Charge Facts**
+- Reads `fct_shipments_randomised.parquet`
+- Reads `fct_charges_randomised.parquet`
+- Builds a combined shipment-level analytical table
 
-Low-margin shipments
+### **2. Exploratory Charge Analytics**
+- Revenue, cost, and margin by charge type  
+- Distribution patterns  
+- Frequency and spend patterns
 
-High operational friction areas
+### **3. Loss Uplift Analysis**
+- Calculates baseline loss rate  
+- Computes uplift per charge  
+- Generates frequency vs uplift scatterplots  
+- Identifies high-frequency/high-risk charges
 
-3. Charge-to-Loss Behaviour Analysis
+### **4. Supplier–Charge Interaction**
+- Builds a Supplier × Charge matrix  
+- Highlights margin patterns  
+- Creates heatmaps for comparison
 
-Calculation of loss uplift per charge type
+### **5. Predictive Modelling (Logistic Regression)**
+- Creates binary charge indicators  
+- Fits logistic regression  
+- Computes odds ratios  
+- Sorts charges into:
+  - Risk amplifiers  
+  - Neutral drivers  
+  - Protective factors  
 
-Comparison of “baseline loss rate” vs “charge-specific loss rate”
+### **6. Narrative Insights**
+Summaries include:
+- Key charges responsible for margin erosion  
+- Supplier behaviours and anomalies  
+- Commercial recommendations (pricing, routing, minimums)  
+- Validation suggestions for Finance/AP/Carrier Management teams
 
-Ranking of charges by risk impact
+---
 
-Identification of charges that:
+## 📊 Example Outputs
 
-Drive up losses
+- **Charge vs Loss Uplift Plot** (log-scale frequency)  
+- **Supplier × Charge Heatmap**  
+- **Odds Ratio Chart** (high-risk vs protective charges)  
+- **Sorted charge ranking tables**
 
-Signal process issues
+These visuals provide a clear story for commercial teams without needing deep statistical knowledge.
 
-Indicate rate-card discrepancies
+---
 
-Influence service profitability
+## 📈 Why This Project Matters
 
-4. Visual Insights
+This notebook demonstrates capability across:
 
-Portfolio-friendly visuals including:
+- Practical **data engineering**  
+- Commercial **margin analytics**  
+- Applied **statistical modelling**  
+- Real **3PL domain understanding**  
+- Clear **stakeholder storytelling**
 
-Distribution plots (sales, cost, margin)
+It shows how advanced analytics can uncover:
 
-Charge frequency bar charts
+- Hidden margin leakage  
+- Poorly priced surcharges  
+- Supplier overcharges  
+- Client behaviours driving cost  
+- Opportunities to protect profitability  
 
-Charge overlap heatmaps
+Perfect for illustrating end-to-end thinking:  
+**Data → Insight → Explanation → Business Action**
 
-Loss uplift plots
+---
 
-Shipment-level price/cost scatter patterns
+## 🧑‍💼 Author
 
-All visuals are annotated and designed to show analytical reasoning, not just charts.
+**Lewis Andrews**  
+Advanced Analytics, Finance & Data Platforms  
+Logistics / 3PL • Python • Power BI • DuckDB/dbt  
 
-5. Business Interpretation
-
-Each section includes domain-specific commentary such as:
-
-Supplier or service combinations that regularly produce negative margins
-
-Charges associated with under-billing or cost escalation
-
-Outlier price patterns that may represent mispriced jobs
-
-Charge structures differing between clients, services, or destinations
-
-These insights demonstrate practical, commercial impact, ideal for audit/data roles.
-
-What This Notebook Demonstrates (Skills)
-
-This was designed to show apprenticeship employers:
-
-✔ Data engineering
-
-Joining fact tables, enriching fields, building scalable feature sets.
-
-✔ Analytical diagnostics
-
-Understanding why patterns occur — not just calculating metrics.
-
-✔ Price/cost modelling
-
-Quantitative understanding of profitability drivers.
-
-✔ Data storytelling
-
-Turning complex analysis into stakeholder-ready insights.
-
-✔ Visual analytics
-
-Clear, annotated plots that illustrate insights clearly.
-
-✔ Commercial understanding
-
-Connecting patterns to billing, rate cards, operations & finance.
