@@ -1,176 +1,124 @@
-📘 Notebook 03 — Outlier Detection & Statistical Anomaly Detection
-Advanced Analytics & Machine Learning for Logistics Finance
+# 📘 Outlier Detection & Statistical Anomaly Detection  
+### Advanced Analytics for Logistics Finance & Commercial Risk
 
-This notebook demonstrates a multi-method anomaly detection framework applied to 10 million enriched logistics shipment records.
+This notebook presents a **multi-method anomaly detection framework** applied to a large, enriched logistics shipment dataset.  
+The analysis is designed to identify **financial, pricing, and operational irregularities** that are not visible through standard reporting or dashboard-based analysis.
 
-It showcases techniques used in
+Rather than relying on a single statistical technique, the notebook combines **classical statistics, unsupervised machine learning, and regression-based diagnostics** to surface different categories of risk and unusual behaviour.
 
-audit & assurance
+---
 
-fraud detection
+## 🎯 Analytical Objective
 
-cost-control analytics
+The objective of this analysis is to **detect, explain, and contextualise anomalous shipment behaviour**, including:
 
-operational insight
+- Mispriced consignments  
+- Unexpected cost spikes  
+- Supplier-level pricing inconsistencies  
+- Operational anomalies and mischarges  
+- Rate-card misalignment  
+- Non-linear pricing relationships between sales and cost  
 
-risk identification
+The focus is not only on detection, but on **interpretability and commercial relevance**.
 
-Objective
+---
 
-Detect and explain unusual shipment behaviours such as
+## 🧠 Analytical Philosophy
 
-Mispriced consignments
+In complex pricing and cost environments, no single anomaly detection method is sufficient.  
+Different techniques surface **different failure modes**, for example:
 
-Unexpected cost spikes
+- Simple margin outliers  
+- Dense-cluster deviations  
+- Multivariate pricing breakdowns  
+- Structural cost–revenue inconsistencies  
 
-Supplier-level pricing inconsistencies
+This notebook therefore applies **multiple complementary methods**, treating anomaly detection as an *investigative framework* rather than a binary flagging exercise.
 
-Operational anomalies
+---
 
-Rate-card mismatches
+## 🛠 Techniques Implemented
 
-Patterns not visible through standard BI tools
+### **Z-Score Detection**
+- Classical statistical deviation
+- Effective for margin and cost screening
+- Useful for rapid, explainable controls
 
-The goal is to demonstrate analytical depth, ML capability, and domain understanding.
+### **Interquartile Range (IQR)**
+- Robust to skewed and heavy-tailed distributions
+- Highlights irregular cost behaviour
+- Commonly used in financial assurance contexts
 
-Techniques Included
+### **Isolation Forest (Unsupervised ML)**
+- Tree-based anomaly scoring
+- Captures complex, multivariate irregularities
+- Scales well to high-volume data
 
-This notebook implements multiple anomaly-detection methods
+### **Local Outlier Factor (LOF)**
+- Density-based detection
+- Identifies shipments that are anomalous relative to peer groups
+- Effective for uncovering unusual operational profiles
 
-1. Z-Score Outlier Detection
+### **Regression-Based Anomaly Detection**
+- Models expected cost behaviour based on sales and shipment attributes
+- Flags material deviations from expected pricing relationships
+- Particularly useful for identifying pricing logic breakdowns
 
-Simple statistical deviation
+### **PCA Projection & Visualisation**
+- Dimensionality reduction for complex feature spaces
+- Visual clustering of anomalous behaviour
+- Supports structured investigation and storytelling
 
-Useful for margin-based screening
+---
 
-2. IQR (Interquartile Range)
+## 📊 Key Outputs
 
-Robust against skew and long tails
+The notebook produces:
 
-Highlights cost irregularities
+- Ranked anomaly tables by method (Z-score, IQR, Isolation Forest, LOF)  
+- Regression residual diagnostics highlighting cost vs expected cost divergence  
+- PCA scatter plots illustrating anomaly clusters  
+- Supplier × service insights identifying structural drivers of irregularity  
+- A combined anomaly index aggregating signals across methods  
 
-3. Isolation Forest (Unsupervised ML)
+These outputs are designed to support **prioritisation, investigation, and decision-making**.
 
-Tree-based anomaly scoring
+---
 
-Captures multivariate irregularities
+## 📈 Commercial & Analytical Value
 
-4. Local Outlier Factor (Density-Based)
+This notebook demonstrates:
 
-Detects anomalies in dense vs sparse regions
+- Advanced statistical reasoning applied to real commercial data  
+- Responsible use of unsupervised machine learning  
+- Ability to handle large, high-dimensional datasets  
+- Strong linkage between analytics and business interpretation  
+- Clear separation between statistical anomalies and legitimate edge cases  
 
-Effective for recognising unusual shipment profiles
+The analysis surfaces **actionable insight**, not just statistical noise.
 
-5. Regression-Based Anomaly Detection
+---
 
-Predicts expected cost based on sales
+## 🧾 Summary of Findings
 
-Flags deviations from normal pricing relationships
+The framework identifies multiple categories of anomalies, including:
 
-6. PCA Projection (Dimensionality Reduction)
+- Pricing patterns inconsistent with supplier rate cards  
+- Margin outliers impacting revenue and cost accuracy  
+- Supplier–service combinations driving abnormal behaviour  
+- Operational mischarges (material under- or over-costing)  
+- Unexpected sales–cost relationships not captured by rule-based logic  
 
-Visualises anomaly clusters
+These findings naturally inform:
+- Pricing and rate-card review  
+- Supplier performance discussions  
+- Billing correction and recovery  
+- Data quality and process improvement  
 
-Useful for storytelling to stakeholders
+---
 
-Key Outputs
+## 🧑‍💼 Author
 
-The notebook produces
-
-• Ranked anomaly tables
-
-(Z-score, IQR, Isolation Forest, LOF)
-
-• PCA scatter plots
-
-Colour-coded anomaly clusters
-
-• Regression residual analysis
-
-Shows where cost ≠ expected cost
-
-• Business insights
-
-Supplierservice combinations driving irregularities
-
-• Combined anomaly scoring
-
-Multiple methods aggregated into a single anomaly index
-
-Why This Notebook Matters
-
-This project shows strong capability in
-
-✔ Financial analytics
-✔ Risk identification
-✔ Machine learning
-✔ Data storytelling
-✔ Domain understanding (logisticscost models)
-✔ Reproducible analysis
-✔ High-volume data handling
-
-It is designed specifically to strengthen applications for
-
-Audit apprenticeships
-
-Data analytics roles
-
-Risk & assurance positions
-
-Consulting and operations analytics
-
-How to Run
-Requirements
-
-Python 3.9+
-
-VS Code + Jupyter extension
-
-Packages in requirements.txt
-
-Run
-pip install -r requirements.txt
-jupyter notebook
-
-
-Open the file
-
-Notebook_03_Outlier_Detection.ipynb
-
-Included Files
-03_Outlier_Detection
-│
-├── Notebook_03_Outlier_Detection.ipynb   -- Full notebook with code
-├── Notebook_03_Outlier_Detection.html    -- Clean rendered report
-├── README.md                             -- This file
-├── requirements.txt
-└── sample_outputs
-      ├── pca_scatter.png
-      ├── iso_forest_scores.png
-      └── anomaly_table.png
-
-Summary
-
-The notebook identifies multiple categories of anomalies, including
-
-Pricing patterns inconsistent with supplier rate-cards
-
-Margin outliers affecting revenue and cost accuracy
-
-Supplierservice outlier clusters
-
-Operational mischarges (heavy underover cost)
-
-Unexpected pricing relationships between sales + cost
-
-It provides clear recommendations for
-
-Billing corrections
-
-Supplier performance review
-
-Data quality improvement
-
-Rate-card alignment
-
-This demonstrates real-world commercial and analytical impact.
+**Lewis Andrews**  
+Advanced Analytics • Finance • Logistics  
+Python • Machine Learning • Power BI • DuckDB/dbt  
