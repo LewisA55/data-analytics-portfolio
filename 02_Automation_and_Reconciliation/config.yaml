@@ -1,0 +1,27 @@
+keys:
+  invoice_key: tracking_id
+  invoice_group: invoice_id
+  rate_match_keys: ["product_code", "service_code"]
+
+tolerances:
+  amount_abs: 0.01
+
+columns:
+  invoice:
+    invoice_id: invoice_id
+    tracking_id: tracking_id
+    product_code: product_code
+    service_code: service_code
+    billed_amount: billed_amount
+    billed_weight: billed_weight
+  rate_card:
+    product_code: product_code
+    service_code: service_code
+    base_weight: base_weight
+    base_cost: base_cost
+    extra_weight: extra_weight
+    extra_rate: extra_rate
+
+output:
+  detail_file: reconciliation_detail.csv
+  summary_file: reconciliation_summary.csv
